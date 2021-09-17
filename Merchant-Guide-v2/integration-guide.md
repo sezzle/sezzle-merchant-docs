@@ -11,7 +11,7 @@ category: 6102e1a0ab9a5c000f95e56f
 You are viewing the latest version of the Sezzle API.  Check previous documentation for <a class="external-link" href="/v1">Version 1</a>.
 </aside>
 
-The Sezzle API v2 is intended for merchants interested in accepting Sezzle as a payment option while using the latest features offered by v2.
+The Sezzle API v2 is intended for merchants interested in accepting Sezzle as a payment option, using the latest features offered by the Sezzle API v2.
 
 In addition to a direct API integration, Sezzle also offers integrations with some of the most popular eCommerce platforms.<br/>
 
