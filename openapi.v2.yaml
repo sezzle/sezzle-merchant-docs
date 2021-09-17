@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Sezzle API
-  description: The Sezzle API enables merchants to accept Sezzle Pay as a payment option.
+  description: This Sezzle API is intended for merchants who want to accept Sezzle Pay as a payment option.
   termsOfService: 'https://legal.sezzle.com'
   # contact:
   #   name: Sezzle Docs
@@ -22,7 +22,7 @@ paths:
     post:
       tags:
         - Bearer Authentication
-      summary: Get bearer authentication token.
+      summary: Get a bearer authentication token
       operationId: postV1Authentication
       requestBody:
         description: Authentication request
@@ -56,8 +56,8 @@ paths:
     post:
       tags:
         - Session
-      summary: Create a new session.
-      description: Create a new customer checkout or tokenize a customer.
+      summary: Create a new session
+      description: Create new customer checkout and/or tokenize customer
       operationId: postV2Session
       requestBody:
         description: Session request
@@ -217,7 +217,7 @@ paths:
     patch:
       tags:
         - Order
-      summary: Update an order
+      summary: Update order
       operationId: patchV2Checkout
       parameters:
         - name: order_uuid
@@ -1385,4 +1385,3 @@ components:
       type: apiKey
       name: Authorization
       in: header
-
