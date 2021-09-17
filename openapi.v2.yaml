@@ -56,8 +56,8 @@ paths:
     post:
       tags:
         - Session
-      summary: Create a new session
-      description: Create new customer checkout or tokenize customer.
+      summary: Create a new session.
+      description: Create new customer checkout and/or tokenize customer.
       operationId: postV2Session
       requestBody:
         description: Session request
