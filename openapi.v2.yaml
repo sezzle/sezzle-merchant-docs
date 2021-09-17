@@ -22,7 +22,7 @@ paths:
     post:
       tags:
         - Bearer Authentication
-      summary: Get a bearer authentication token.
+      summary: Get bearer authentication token.
       operationId: postV1Authentication
       requestBody:
         description: Authentication request
