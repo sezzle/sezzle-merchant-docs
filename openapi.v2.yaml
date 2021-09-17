@@ -217,7 +217,7 @@ paths:
     patch:
       tags:
         - Order
-      summary: Update order
+      summary: Update an order
       operationId: patchV2Checkout
       parameters:
         - name: order_uuid
