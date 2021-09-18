@@ -2,7 +2,7 @@ name: Sync Markdown Docs to ReadMe!
 on:
   push:
    branches:
-     - main
+     - production
 jobs:
   build:
     runs-on: ubuntu-latest
