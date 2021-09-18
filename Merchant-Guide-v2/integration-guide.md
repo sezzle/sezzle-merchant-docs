@@ -17,24 +17,9 @@ In addition to a direct API integration, Sezzle offers integrations with some of
 
 Sezzle offers integrations with some of the most popular eCommerce platforms.<br/>
 Note that <sup>v1</sup> indicates support for <a class="external-link" href="/v1">v1 API</a> only.<br/>
-**Please choose your platform to see the relevant documentation:**<br/>
-1. [Shift4Shop](#shift4shop)<br/>
-2. [BigCommerce](#bigcommerce) <sup>v2</sup><br/>
-3. [Bold Cashier](#bold-cashier)<br/>
-4. [BuyItLive](#buyitlive)<br/>
-5. [CommentSold](#commentsold)<br/>
-6. [Lightspeed](#lightspeed) <sup>v2</sup><br/>
-7. [Magento 1](#magento-1)<br/>
-8. [Magento 2](/#magento-2) <sup>v2</sup><br/>
-9. [Mojo](#mojo) <sup>v2</sup><br/>
-10. [NopCommerce](#nopcommerce)<br/>
-11. [Salesforce Commerce Cloud](#salesforce-commerce-cloud) <sup>v2</sup><br/>
-12. [Shopify](#shopify)<br/>
-13. [Prestashop](#prestashop) <sup>v2</sup><br/>
-14. [Shopware 5](#shopware-5) <sup>v2</sup><br/>
-15. [Wix](#wix) <sup>v2</sup><br/>
-16. [WooCommerce](#woocommerce)<br/>
-17. [Zoey](#zoey)<br/>
+
+## How to use this guide
+![How-to-use](https://github.com/sezzle/sezzle-merchant-docs/blob/production/Merchant-Guide-v2/images/how-to-use-guide.png?raw=true)
 
 Field or header names in bold case followed by an asterisk are required. For example, **this_is_required\*** is a required field whereas this_is_optional is not.
 
