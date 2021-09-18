@@ -5,31 +5,8 @@ slug: "integration-guide"
 category: 6102e1a0ab9a5c000f95e56f
 ---
 
-# Introduction
 
-<aside class="success">
-You are viewing the latest version of the Sezzle API.  Check previous documentation for <a class="external-link" href="/v1">Version 1</a>.
-</aside>
-
-The Sezzle API v2 is intended for merchants interested in accepting Sezzle as a payment option, using the latest features offered by the Sezzle API v2.
-
-In addition to a direct API integration, Sezzle offers integrations with some of the most popular eCommerce platforms.<br/>
-
-Sezzle offers integrations with some of the most popular eCommerce platforms.<br/>
-Note that <sup>v1</sup> indicates support for <a class="external-link" href="/v1">v1 API</a> only.<br/>
-
-## How to use this guide
-![How-to-use](https://github.com/sezzle/sezzle-merchant-docs/blob/production/Merchant-Guide-v2/images/how-to-use-guide.png?raw=true)
-
-Field or header names in bold case followed by an asterisk are required. For example, **this_is_required\*** is a required field whereas this_is_optional is not.
-
-If you have any questions regarding our API, please reach out to our team by email at dev@sezzle.com.
-
-<aside class="notice">
-You should have an approved Sezzle account to start the integration process. Please visit our <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/signup">signup page (US/CA)</a> or <a class="external-link" target="_blank" href="https://dashboard.eu.sezzle.com/merchant/signup">signup page (EU)</a> if you don't have a Sezzle account already.
-</aside>
-
-# API
+# Using the Sezzle API
 
 ## Obtain Authentication Token
 
