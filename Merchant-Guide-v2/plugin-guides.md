@@ -1597,16 +1597,16 @@ Go to <a class="external-link" target="_blank" href="https://www.zoey.com/apps/s
 
 # Canada In-Store
 
-## In-Store Direct API - Canadian Merchants
+## In-Store Direct API, for Canadian Merchants
 
 ### Overview
 
 The integrated POS checkout API enables merchants to send a Sezzle Checkout link to a customer via text or email and then receive payment updates on their POS when the checkout has been completed.
 
 <div style="display:flex;align-items:flex-start;margin-bottom:10px;padding-left:28px">
-<img src="images/canada_instore/Text_Invoice.jpeg" alt="sezzle text invoice" width="10%" />
+<img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/canada_instore/Text_Invoice.jpeg?raw=true" alt="sezzle text invoice" width="10%" />
 <div style="display:inline;width:20px;"></div>
-<img src="images/canada_instore/Email_Invoice.jpeg" alt="sezzle email invoice" width="10%" />
+<img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/canada_instore/Email_Invoice.jpeg?raw=true" alt="sezzle email invoice" width="10%" />
 </div>
 
 The customer can click on the Sezzle URL in the text or email to complete the checkout:
