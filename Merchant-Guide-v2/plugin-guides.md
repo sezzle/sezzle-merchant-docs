@@ -1359,7 +1359,7 @@ faster checkout experience by saving their card details.<br>
 - Enable Widget : Enable for showing Sezzle widget in PDP and Cart
 Page.<br>
 
-<img src="images/prestashop.https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/jpg?raw=true" alt="prestashop Configuration" />
+<img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/jpg?raw=true" alt="prestashop Configuration" />
 
 ### Payment Capture
 Payment will be automatically captured during the checkout process.<br>
@@ -1374,7 +1374,7 @@ and click `Add` <br>
 - Change the Order Status to `Payment Accepted` if capture is
 successful.<br>
 
-<img src="images/prestashop2.https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/jpg?raw=true" alt="prestashop Payment Capture" />
+<img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/jpg?raw=true" alt="prestashop Payment Capture" />
 
 ### Payment Refund
 - In your PrestaShop backoffice, go to `Orders > Orders`.<br>
@@ -1386,14 +1386,14 @@ respective places.<br>
 - Change the Order Status to `Refunded` only if full refund is
 successful.<br>
 
-<img src="images/prestashop3.https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/jpg?raw=true" alt="prestashop Payment Capture" />
+<img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/jpg?raw=true" alt="prestashop Payment Capture" />
 
 ### Payment Release
 - In your PrestaShop backoffice, go to `Orders > Orders`.<br>
 - Select the order for which you want to refund the payment.<br>
 - Change the Order status to `Cancelled`, and click on `Update Status`.<br>
 
-<img src="images/prestashop4.https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/jpg?raw=true" alt="prestashop Payment Release" />
+<img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/jpg?raw=true" alt="prestashop Payment Release" />
 
 ### Upgrading the module
 If you are already using an older Sezzle PrestaShop module version earlier and want to use the latest version, proceed as follows:<br>
@@ -1618,7 +1618,7 @@ Customer experience for existing Sezzle users<br/>
 
 ## Direct API
 
-### Checkout Steps
+### Checkout Stepshttps://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/
 1. Merchant creates Sezzle checkout
 * [API Link](#create-a-session)
 * Set order `intent` to `AUTH`
