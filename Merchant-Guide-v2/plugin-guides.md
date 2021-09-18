@@ -1604,14 +1604,14 @@ Go to <a class="external-link" target="_blank" href="https://www.zoey.com/apps/s
 The integrated POS checkout API enables merchants to send a Sezzle Checkout link to a customer via text or email and then receive payment updates on their POS when the checkout has been completed.
 
 <div style="display:flex;align-items:flex-start;margin-bottom:10px;padding-left:28px">
-<img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/canada_instore/Text_Invoice.jpeg?raw=true" alt="sezzle text invoice" width="10%" />
+<img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/canada_instore/Text_Invoice.jpeg?raw=true" alt="sezzle text invoice" width="40%" />
 <div style="display:inline;width:20px;"></div>
-<img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/canada_instore/Email_Invoice.jpeg?raw=true" alt="sezzle email invoice" width="10%" />
+<img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/canada_instore/Email_Invoice.jpeg?raw=true" alt="sezzle email invoice" width="40%" />
 </div>
 
 The customer can click on the Sezzle URL in the text or email to complete the checkout:
 
-Customer experience for new Sezzle users<br/>
+### Customer experience for new Sezzle users<br/>
 <img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/canada_instore/New User Experience.png?raw=true" alt="new Sezzle user experience" width="75%" /><br/><br/>
 Customer experience for existing Sezzle users<br/>
 <img src="https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/canada_instore/Existing User Experience.png?raw=true" alt="existing Sezzle user experience" width="60%" /><br/>
