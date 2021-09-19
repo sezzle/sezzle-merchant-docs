@@ -51,7 +51,7 @@ You should have an approved Sezzle account to start the integration process. Ple
 # Integration Flow
 
 ## Overview of Integration Flow
-![payment flow](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/images/api-flow.png?raw=true)
+![payment flow](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/api-flow.png?raw=true)
 
 ## Explanation of payment flow
 
