@@ -11,10 +11,10 @@ info:
     url: 'https://media.sezzle.com/branding/2.0/png/Logo_WhiteWordmark_500x126.png'
     backgroundColor: '#392558'
 servers:
-  - url: /sandbox.gateway.sezzle.com/v2
-  - url: /gateway.sezzle.com/v2
-  - url: /sandbox.gateway.eu.sezzle.com/v2
-  - url: /gateway.eu.sezzle.com/v2
+  - url: https://sandbox.gateway.sezzle.com/v2
+  - url: https://gateway.sezzle.com/v2
+  - url: https://sandbox.gateway.eu.sezzle.com/v2
+  - url: https://gateway.eu.sezzle.com/v2
 security:
   - Bearer: []
 paths:
