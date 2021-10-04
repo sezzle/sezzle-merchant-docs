@@ -1131,7 +1131,7 @@ Parameter | Type | Description
 **intent\*** | string | Accepted values are "AUTH" or "CAPTURE"
 **reference_id\*** | string | A reference ID for the order
 **order_amount\*** | object | The amount and currency of the order
-**financing_options** | array | The financing option of the order. Accepted values are "4-pay-biweekly" and "6-pay-monthly". If both are supplied, the first option will be taken into account
+**financing_options** | array | The financing option of the order. Accepted values are "4-pay-biweekly" and "6-pay-monthly". If more that one options are supplied, the first option will be taken into account
 
 ### Order Amount Object
 A price object. The amount must be greater than 99.

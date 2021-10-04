@@ -414,6 +414,12 @@ paths:
                       type: string
                     order_amount:
                       $ref: '#/components/schemas/Price'
+                    financing_options:
+                      description: |
+                        *currently 4-pay-biweekly and 6-pay-monthly are supported, defaults to first option if more than one supplied*
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/InstallmentPlan'
       responses:
         '200':
           description: Successful operation
@@ -1172,6 +1178,8 @@ components:
           expiration:
             type: string
             format: date-time
+          financing_option:
+            type: string
           releases:
             type: array
             items:
@@ -1221,6 +1229,9 @@ components:
           type: string
         dob:
           type: string
+        token_expiration:
+          type: string
+          format: date-time
         # status:
         #   type: string
         #   format: Active|NotApproved|InsufficientFunds
