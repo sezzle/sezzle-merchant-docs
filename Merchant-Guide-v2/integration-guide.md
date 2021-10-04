@@ -175,6 +175,7 @@ If you tokenize a customer, then the customer will have the option to agree to a
 "reference_id": "ord_12345",
 "description": "sezzle-store - #12749253509255",
 "requires_shipping_info": true,
+"checkout_financing_options": ["4-pay-biweekly"],
 "items": [
 {
 "name": "widget",
@@ -329,6 +330,7 @@ Parameter | Type | Description
 **description\*** | string | Your description for this order
 **order_amount\*** | object | A Price object containing the amount of the order, which must be at least `100`. All fields of the Price object are required.
 requires_shipping_info | boolean | Flag to indicate if you would like us to collect shipping information for this checkout from the customer. If omitted, defaults to false.
+checkout_financing_options | array | The financing options of the checkout
 items | object | The items being purchased
 discounts | object | The discounts applied to this order. Must be included in total
 metadata | object | Object for any custom data you want to submit with the checkout. You are not limited to the key-value pairs shown in the example, and you may use any key-value pairs you like
@@ -1121,7 +1123,7 @@ You can use this endpoint to create an order for a customer
 "amount_in_cents": 5000,
 "currency": "USD"
 },
-"financing_options": ["6-pay-monthly"]
+"financing_options": ["4-pay-biweekly"]
 }
 ```
 
@@ -1131,7 +1133,7 @@ Parameter | Type | Description
 **intent\*** | string | Accepted values are "AUTH" or "CAPTURE"
 **reference_id\*** | string | A reference ID for the order
 **order_amount\*** | object | The amount and currency of the order
-**financing_options** | array | The financing option of the order. Accepted values are "4-pay-biweekly" and "6-pay-monthly". If more than one options are supplied, the first option will be taken into account
+financing_options | array | The financing options of the order.  Only one option is currently supported
 
 ### Order Amount Object
 A price object. The amount must be greater than 99.
