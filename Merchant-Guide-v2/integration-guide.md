@@ -571,6 +571,7 @@ Use this endpoint to get details on an existing order
 },
 "approved": true,
 "expiration":"2020-04-23T16:13:44Z" ,
+"financing_option": "4-pay-biweekly",
 "releases": [
 {
 "uuid": "4b4d217c-18f1-4bfb-996e-767470c04661",
@@ -1038,6 +1039,7 @@ You can use this endpoint to get details on an existing customer
 "last_name": "Doe",
 "phone": "5555045294",
 "dob": "1990-02-25",
+"token_expiration": "2020-04-27T14:46:59Z",
 "billing_address": {
 "name": "John Doe",
 "street": "123 W Lake St",
@@ -1118,7 +1120,8 @@ You can use this endpoint to create an order for a customer
 "order_amount": {
 "amount_in_cents": 5000,
 "currency": "USD"
-}
+},
+"financing_options": ["6-pay-monthly"]
 }
 ```
 
@@ -1128,6 +1131,7 @@ Parameter | Type | Description
 **intent\*** | string | Accepted values are "AUTH" or "CAPTURE"
 **reference_id\*** | string | A reference ID for the order
 **order_amount\*** | object | The amount and currency of the order
+**financing_options** | array | The financing option of the order. Accepted values are "4-pay-biweekly" and "6-pay-monthly". If both are supplied, the first option will be taken into account
 
 ### Order Amount Object
 A price object. The amount must be greater than 99.
