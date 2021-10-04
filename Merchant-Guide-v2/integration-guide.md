@@ -175,7 +175,6 @@ If you tokenize a customer, then the customer will have the option to agree to a
 "reference_id": "ord_12345",
 "description": "sezzle-store - #12749253509255",
 "requires_shipping_info": true,
-"checkout_financing_options": ["4-pay-biweekly"],
 "items": [
 {
 "name": "widget",
@@ -1122,8 +1121,7 @@ You can use this endpoint to create an order for a customer
 "order_amount": {
 "amount_in_cents": 5000,
 "currency": "USD"
-},
-"financing_options": ["4-pay-biweekly"]
+}
 }
 ```
 
