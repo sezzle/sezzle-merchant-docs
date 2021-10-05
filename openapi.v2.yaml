@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Sezzle API
-  description: This Sezzle API is intended for merchants who want to accept Sezzle Pay as a payment option.
+  description: This Sezzle API is intended for merchants who want to accept Sezzle as a payment option.
   termsOfService: 'https://legal.sezzle.com'
   # contact:
   #   name: Sezzle Docs
