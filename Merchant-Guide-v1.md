@@ -5,12 +5,6 @@ slug: "merchant-guide-v1"
 category: 6102e1a0ab9a5c000f95e56f
 ---
 
-
----
-title: Sezzle API v1
-
----
-
 # Introduction (v1)
 
 <aside class="content warning">
@@ -1534,5 +1528,3 @@ Go to <a class="external-link" target="_blank" href="https://www.zoey.com/apps/s
 4. If you are redirected to the Sezzle checkout page, your integration is complete. **Congratulations!**
 ![sezzle checkout](images/sezzle-checkout.png)
 5. **Warning** Don't complete the payment. Your checkout is now live, so you will be charged if you complete.
-
-<div class="end-of-page"></div>
