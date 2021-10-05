@@ -1,3 +1,13 @@
+---
+title: "Plugin Guides A-M"
+excerpt: "Plugin Guides A-M"
+slug: "plugin-guides-a-m"
+category: 6102e1a0ab9a5c000f95e56f
+---
+
+
+
+
 # Plugin integration
 
 This page contains guides for Sezzle plugins from A to M. For guides to plugins from N to Z (for example, the Zoey plugin) see [Plugin Guides N-Z](doc:plugin-guides-n-z)
