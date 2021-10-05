@@ -5,7 +5,6 @@ slug: "integration-guide"
 category: 6102e1a0ab9a5c000f95e56f
 ---
 
-
 # Using the Sezzle API
 
 ## Obtain Authentication Token
@@ -1128,6 +1127,7 @@ Parameter | Type | Description
 **intent\*** | string | Accepted values are "AUTH" or "CAPTURE"
 **reference_id\*** | string | A reference ID for the order
 **order_amount\*** | object | The amount and currency of the order
+**financing_options** | array | The financing option for the order. Accepted values are "4-pay-biweekly" and "6-pay-monthly". If more than one option is provided, the first option will take effect. 
 
 ### Order Amount Object
 A price object. The amount must be greater than 99.
@@ -1972,4 +1972,3 @@ language: document.querySelector('html').lang || navigator.language,
 </script>
 <script src="https://widget.sezzle.com/v1/javascript/price-widget?uuid=12a34bc5-6de7-890f-g123-4hi5678jk901"></script>
 ```
-
