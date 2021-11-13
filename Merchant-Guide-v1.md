@@ -1,15 +1,13 @@
 ---
-title: "Merchant Guide v1"
-excerpt: "Sezzle Merchant Guide v1"
-slug: "merchant-guide-v1"
-category: 6102e1a0ab9a5c000f95e56f
+title: Sezzle API v1
+
 ---
 
 # Introduction (v1)
 
-<aside class="content warning">
+
 You are viewing Version 1 of the Sezzle API. Check out the <a class="external-link" href="/">latest version</a>!
-</aside>
+
 
 The Sezzle API v1 is intended for merchants interested in accepting Sezzle as a payment option. The Sezzle [Integration Flow](#integration-flow) illustrates the user payment interaction.
 
@@ -36,7 +34,7 @@ Note that <sup>v2</sup> indicates support for <a class="external-link" href="/">
 
 Field or header names in bold case followed by an asterisk are required. (For example, **this_is_required\*** is a required field whereas this_is_optional is not.)
 
-If you have any questions regarding our API, please reach out to our team by email at dev@sezzle.com.
+If you have any questions regarding our API, please reach out to our team here: <a target="_blank" href="https://merchant-help.sezzle.com/hc/en-us/requests/new" >Submit Merchant Help Request</a> 
 
 <aside class="notice">
 You should have an approved Sezzle account to start the integration process. Please visit our <a class="external-link" href="https://dashboard.sezzle.com/merchant/signup">signup page</a> if you don't have a Sezzle account already.
@@ -788,124 +786,6 @@ The Sezzle OpenAPI Specification can be imported into the `Swagger Editor` to ea
 # Platform Integrations
 
 
-## 3DCart
-
-This guide describes how to integrate Sezzle into your 3DCart website so that you can provide Sezzle as a payment option for your customers. After integrating Sezzle, your 3DCart site will:
-
-1. Offer Sezzle as a payment option on the checkout page.
-2. Refund Sezzle payments from your 3DCart order management system.
-3. Display Sezzle promotional messaging.
-4. Authorize and capture payments.
-
-### Integration Steps Overview
-
-1. [Install and configure the Sezzle](#install-the-sezzle-3dcart-extension) <a class="external-link" target="_blank" href="https://app-sezzle01.3dcart.com/Home/InstallApp">3DCart App</a>
-2. [Test your integration](#3dcart-live-checkout)
-3. **(Optional)** [Sandbox Testing](#3dcart-sandbox-testing)
-
-### Before You Begin
-
-1. You should have a Sezzle merchant account. 
-    * Please visit our <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/signup">signup page</a> if you don't have an account.
-2. Make sure you have the following Sezzle details handy.
-    * <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/business">Merchant ID</a>
-    * <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Public API Key</a>
-    * <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Private API Key</a>
-3. Familiarize yourself with [the transaction flow when buying with Sezzle](#overview-of-integration-flow).
-
-### Install the Sezzle 3DCart Extension
-
-1. Log in to your website's 3DCart admin.
-2. Get the app <a class="external-link" target="_blank" href="https://app-sezzle01.3dcart.com/Home/InstallApp">here</a>.
-3. Copy+paste your `Store URL` into the input area, then click `Proceed`.
-![application_authorization](images/integrations/3dcart/application-authorization.png)<br/>
-4. Check the PCI Compliance box, then click `Acknowledge and Authorize the App` to start the installation.
-
-### Admin Configuration
-
-1. In your 3DCart admin, go to `Settings` > `Payment`.<br/>
-2. Click `Select Payment Methods`. <br/>
-![select_payment_methods](images/integrations/3dcart/select-payment-methods.png)<br/>
-3. Turn the Sezzle switch to `On`.<br/>
-4. Copy your `Public Key` from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a>, and paste it into the corresponding field in the Sezzle configuration page of your 3DCart admin.<br/>
-5. Next to `Private Key`, click `Change`. Then, copy your `Private Key` from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a>, and paste it into the corresponding field in the Sezzle configuration page of your 3DCart admin.<br/>
-6. Click `Save`.<br/>
-![sezzle_payment_config](images/integrations/3dcart/payment-methods.png)<br/>
-7. To restrict Sezzle usage by country, click the `Exclude List` hyperlink under the Sezzle switch. <br/>
-8. Click `Add Location`.<br/>
-9. Select the desired country, then click `Add`. <br/>
-![exclude_list](images/integrations/3dcart/exclude-list.png)<br/>
-10. Installation is complete.
-
-### 3DCart Sandbox Testing
-
-1. In the Sezzle configuration page of your 3DCart admin, enter the [Sandbox API Keys](#sandbox) from your <a class="external-link" target="_blank" href="https://sandbox.dashboard.sezzle.com/merchant">Sezzle Merchant Sandbox Dashboard</a> and check the `Test Mode` checkbox, then save the configuration. Make sure you are doing this on your `dev`/`staging` website.
-2. On your website, add an item to the cart, then proceed to checkout and select `Sezzle` as the payment method.
-3. Click `Place Order` and you should be redirected to the Sezzle checkout page. If prompted, sign in.
-![checkout](images/integrations/3dcart/checkout.png)
-4. Enter the payment details using [test data](#test-data), then click `Complete Order`.
-5. After the payment is completed on Sezzle, you should be redirected back to your website and see a successful payment page.
-6. **Sandbox testing is complete**. You can log in to your <a class="external-link" target="_blank" href="https://sandbox.dashboard.sezzle.com/merchant">Sezzle Merchant Sandbox Dashboard</a> to see the test order you just placed.
-
-### 3DCart Live Checkout
-
-1. In the Sezzle configuration page of your 3DCart admin, enter the API Keys from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a> and uncheck the `Test Mode` checkbox, then save the configuration. 
-2. On your website, add an item to your cart, then proceed to `Checkout` and select `Sezzle` as the payment method.
-3. Click `Place Order`.
-![checkout](images/integrations/3dcart/checkout.png)
-4. If you are redirected to the Sezzle checkout page, your integration is complete. **Congratulations!**
-![sezzle checkout](images/sezzle-checkout.png)
-5. **Warning** Don't complete the payment. Your checkout is now live, so you will be charged if you complete.
-
-### Troubleshooting
-
-If testing was unsuccessful, review the following:
-
-* Sezzle 3DCart extension is the most updated version.
-* Sezzle payment method is enabled.
-* API Keys were entered correctly.
-    * It is recommended to use the Copy icon in the <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a> to avoid typos or extra spaces.
-    * If you have multiple accounts with Sezzle, the merchant ID and API Keys are tied to only one URL.
-* Widget script is present on your website and reflects the `Merchant ID `from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/business">Sezzle Merchant Dashboard</a>.
-  * Go to a product page on your website.
-  * Right-click then select `Inspect`.
-  * In the `Elements` tab, search for `widget.sezzle`.
-
-### Manual Theme Integration
-
-If the 3DCart app fails to maintain the widget script on the product pages, or to add the script manually for additional pages, complete the following steps:
-
-1. From your 3DCart admin, go to `Settings` > `Design` > `Themes & Styles`. 
-2. In your `Current Theme`, click the button labeled `More` then select `Edit Template(HTML)`.
-3. Find the copy of your theme under `Go to Folder`. 
-4. Click the `gear` icon next to the `product_items.html` file, then click `Edit`.
-5. When the dashboard asks if you want to edit your theme files, click the `Edit Theme Files` button.
-6. In the `Source Code` text area, copy+paste the script at the very beginning of the file.
-7. Click `Save`.
-
-The script to be inserted into your webpage is as follows:
-
-Template: 
-```
-<script src="https://widget.sezzle.com/v1/javascript/price-widget?uuid={sezzle_merchant_uuid}"></script>
-```
-
-<aside class="notice">
-  Update <code>{sezzle_merchant_uuid}</code> in the above script template with your site’s Merchant ID (removing the curly brackets), which can be found in the <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/business">Sezzle Merchant Dashboard</a>.
-</aside>
-
-Example: 
-```
-<script src="https://widget.sezzle.com/v1/javascript/price-widget?uuid=12a34bc5-6de7-890f-g123-4hi5678jk901"></script>
-```
-
-Instructions may vary slightly depending on your active plug-ins. For assistance with widget configuration, click `Request Addition of Widgets` in the widget step of your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/checklist">Sezzle Merchant Dashboard Setup Checklist</a>.
-
-### Uninstall Steps
-
-1. Go to `Settings` > `Payment`.
-2. Click `Select Payment Methods`.
-2. Under the Sezzle App, click the `gear` icon then click `Delete`.
 
 ## Bold Cashier
 
@@ -934,13 +814,13 @@ This guide describes how to integrate Sezzle into your Bold Cashier website so t
 1. First you must install the Bold Cashier app to your platform and store url. You can do this from the <a class="external-link" target="_blank" href="https://boldcommerce.com/cashier">Bold Cashier site</a>.
 2. Log in to your Shopify admin.
 3. Go to `Apps` > `Bold Cashier`. 
-![Bold cashier](images/integrations/bold/bold-apps.png)
+![Bold cashier](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/bold/bold-apps.png?raw=true)
 4. In the Bold Cashier left sidebar, click `Marketplace`, then find `Sezzle` and click `Install`.
-![Bold install](images/integrations/bold/bold-marketplace.png)
+![Bold install](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/bold/bold-marketplace.png?raw=true)
 5. Click `Allow` to accept permissions and complete the installation. 
-![Bold permissions](images/integrations/bold/bold-permissions.png)
+![Bold permissions](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/bold/bold-permissions.png?raw=true)
 6. Installation is complete.
-![Bold marketplace](images/integrations/bold/bold-configure.png)
+![Bold marketplace](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/bold/bold-configure.png?raw=true)
 
 ### Bold Cashier Live Checkout
 
@@ -954,7 +834,7 @@ This guide describes how to integrate Sezzle into your Bold Cashier website so t
 
 1. Go to your Bold Cashier `Marketplace` and scroll to find `Sezzle`.
 2. Click `Uninstall`. 
-![Bold marketplace](images/integrations/bold/bold-configure.png)
+![Bold marketplace](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/bold/bold-configure.png?raw=true)
 
 
 ## BuyItLive
@@ -1029,7 +909,7 @@ This guide describes how to integrate Sezzle into your CommentSold website so th
 2. Click `Payment Gateways`.
 3. Copy your `Private Key` and `Public Key` from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a>, and paste them into the corresponding fields in the Sezzle configuration page of your CommentSold admin.
 4. Click `Update Keys`.
-![sezzle_payment_config](images/integrations/commentsold/payment-gateways.png)<br/>
+![sezzle_payment_config](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/commentsold/payment-gateways.png?raw=true)<br/>
 5. Installation is complete.
 
 ### CommentSold Live Checkout
@@ -1102,7 +982,7 @@ This guide describes how to integrate Sezzle into your Magento 1 website so that
     9. Set `Payment Action` as `Authorize Only` to authorize the payment at the time the order is placed but capture payment later, or `Authorize and Capture` to both authorize and capture at the time the order is placed.
         * If `Authorize Only` is selected, then the capture expiry time will be visible in the `Order Details` page. You need to capture the payment before the given deadline by choosing `Capture Online` when you create the invoice.
     10. Save the configuration.
-    ![admin sezzle](images/integrations/magento1/admin-pay.png)
+    ![admin sezzle](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/magento1/admin-pay.png?raw=true)
 3. Go to `System/Cache Management`.
 4. Flush the cache storage by selecting `Flush Cache Storage`.
 5. Installation is complete.
@@ -1112,7 +992,7 @@ This guide describes how to integrate Sezzle into your Magento 1 website so that
 1. In the Sezzle configuration page of your Magento 1 admin, enter the [Sandbox API Keys](#sandbox) from your <a class="external-link" target="_blank" href="https://sandbox.dashboard.sezzle.com/merchant">Sezzle Merchant Sandbox Dashboard</a> and set the `API Mode` to `Sandbox/Test`, then save the configuration. Make sure you are doing this on your `dev`/`staging` website.
 2. On your website, add an item to the cart, then proceed to `Checkout` and select `Sezzle` as the payment method.
 3. Click `Continue` then `Place Order` and you should be redirected to the Sezzle checkout page. If prompted, sign in.
-![onepage movement](images/integrations/magento1/onepage-movement.png)
+![onepage movement](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/magento1/onepage-movement.png?raw=true)
 4. Enter the payment details using [test data](#test-data), then click `Complete Order`.
 5. After the payment is completed on Sezzle, you should be redirected back to your website and see a successful payment page.
 6. **Sandbox testing is complete**. You can log in to your <a class="external-link" target="_blank" href="https://sandbox.dashboard.sezzle.com/merchant">Sezzle Merchant Sandbox Dashboard</a> to see the test order you just placed.
@@ -1122,7 +1002,7 @@ This guide describes how to integrate Sezzle into your Magento 1 website so that
 1. In the Sezzle configuration page of your Magento 1 admin, enter the API Keys from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a> and set the `API Mode` to `Live`, then save the configuration. 
 2. On your website, add an item to the cart, then proceed to `Checkout` and select `Sezzle` as the payment method.
 3. Click `Continue` then `Place Order`.
-![onepage movement](images/integrations/magento1/onepage-movement.png)
+![onepage movement](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/magento1/onepage-movement.png?raw=true)
 4. If you are redirected to the Sezzle checkout page, your integration is complete. **Congratulations!**
 ![sezzle checkout](images/sezzle-checkout.png)
 5. **Warning** Don't complete the payment. Your checkout is now live, so you will be charged if you complete. 
@@ -1179,16 +1059,16 @@ Go to <a class="external-link" target="_blank" href="https://www.nopcommerce.com
 2. Click `Upload Plugin or Theme` and select the downloaded zipped file per the instructions given.
 3. After the extension has been uploaded, click `Install`.
 4. Under `Configuration`, go to `Payment Methods` and then click `Configure` under `Sezzle`.
-![admin nopcommerce](images/integrations/nopcommerce/pay-methods.png)
+![admin nopcommerce](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/nopcommerce/pay-methods.png?raw=true)
 5. Click `Edit` from the `Payment Method` list.
 6. Copy your `Merchant ID` from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/business">Sezzle Merchant Dashboard</a>, and paste it into the corresponding field in the Sezzle configuration page of your NopCommerce admin.
 7. Copy your `Public Key` and `Private Key` from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a>, and paste them into the corresponding fields in the Sezzle configuration page of your NopCommerce admin.
 8. Set `Transaction Mode` to either `Authorize` or `Authorize and Capture`.
 9. Save the configuration.
-![admin nopcommerce sezzlepay](images/integrations/nopcommerce/pay-configuration.png)
+![admin nopcommerce sezzlepay](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/nopcommerce/pay-configuration.png?raw=true)
 10. To restrict Sezzle usage based on billing country, go to `Configuration` > `Payment Restrictions`.
 11. Choose the country you want to restrict for Sezzle. Please note that Sezzle is currently available for customers from `The United States` and `Canada`. You may wish to restrict all countries where Sezzle is not available.
-![admin nopcommerce_sezzlepay restriction](images/integrations/nopcommerce/pay-restrictions.png)
+![admin nopcommerce_sezzlepay restriction](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/nopcommerce/pay-restrictions.png?raw=true)
 12. Integration is complete.
 
 ### NopCommerce Sandbox Testing
@@ -1196,7 +1076,7 @@ Go to <a class="external-link" target="_blank" href="https://www.nopcommerce.com
 1. In the Sezzle configuration page of your NopCommerce admin, enter the [Sandbox API Keys](#sandbox) from your <a class="external-link" target="_blank" href="https://sandbox.dashboard.sezzle.com/merchant">Sezzle Merchant Sandbox Dashboard</a> and check the `Use Sandbox` checkbox, then save the configuration. Make sure you are doing this on your `dev`/`staging` website.
 2. On your website, add an item to the cart, then proceed to `Checkout` and select `Sezzle` as the payment method.
 3. Click `Confirm` and you should be redirected to the Sezzle checkout page. If prompted, sign in.
-![onepage nopcommerce payment movement](images/integrations/nopcommerce/payment-meth.png)
+![onepage nopcommerce payment movement](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/nopcommerce/payment-meth.png?raw=true)
 4. Enter the payment details using [test data](#test-data), then click `Complete Order`.
 5. After the payment is completed on Sezzle, you should be redirected back to your website and see a successful payment page.
 6. **Sandbox testing is complete**. You can log in to your <a class="external-link" target="_blank" href="https://sandbox.dashboard.sezzle.com/merchant">Sezzle Merchant Sandbox Dashboard</a> to see the test order you just placed.
@@ -1205,10 +1085,10 @@ Go to <a class="external-link" target="_blank" href="https://www.nopcommerce.com
 
 1. In the Sezzle configuration page of your NopCommerce admin, enter the API Keys from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a> and uncheck the `Use Sandbox` checkbox, then save the configuration. 
 2. On your website, add an item to the cart, then proceed to `Checkout` and select `Sezzle` as the payment method.
-![nopcommerce product page](images/integrations/nopcommerce/product-widget.png)
-![nopcommerce product page](images/integrations/nopcommerce/cart-widget.png)
+![nopcommerce product page](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/nopcommerce/product-widget.png?raw=true)
+![nopcommerce product page](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/nopcommerce/cart-widget.png?raw=true)
 3. Click `Continue` then `Confirm`.
-![onepage nopcommerce payment movement](images/integrations/nopcommerce/payment-meth.png)
+![onepage nopcommerce payment movement](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/nopcommerce/payment-meth.png?raw=true)
 4. If you are redirected to the Sezzle checkout page, your integration is complete. **Congratulations!**
 ![sezzle checkout](images/sezzle-checkout.png)
 5. **Warning** Don't complete the payment. Your checkout is now live, so you will be charged if you complete.
@@ -1245,18 +1125,18 @@ This guide describes how to integrate Sezzle into your Shopify website so that y
 2. In your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/checklist">Sezzle Merchant Dashboard Setup Checklist</a>, click `Download Shopify App`.<br/>
 3. Click `Get the App`.<br/>
 4. Click `Install App`.  <br/>
-![install_app](images/integrations/shopify/install-app.png)<br/>
+![install_app](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/install-app.png?raw=true)<br/>
 
 ### Configure Widgets
 
 1. Within the Sezzle app, enter your Public API Key and click `link sezzle account`. <br/>
-![add_public_key](images/integrations/shopify/link-account.png)<br/>
+![add_public_key](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/link-account.png?raw=true)<br/>
 2. Once your account is linked, click `add widgets` to add widgets to your shop. This process may take a minute. <br/>
-![add_widgets](images/integrations/shopify/add-widgets.png)<br/>
+![add_widgets](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/add-widgets.png?raw=true)<br/>
 3. After widgets have been added, navigate to a product page to confirm that the Sezzle widget has been added. <br/>
-![product_widget](images/integrations/shopify/widget-product.png)<br/>
+![product_widget](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/widget-product.png?raw=true)<br/>
 4. If you ever need to remove Sezzle widgets from your shop, click the `remove widgets` button within the Sezzle app. <br/>
-![remove_widgets](images/integrations/shopify/remove-widgets.png)
+![remove_widgets](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/remove-widgets.png?raw=true)
 
 #### Note: If the Sezzle app is unable to automatically add widgets to your shop, one of our team members will automatically be notified and will work to manually add widgets to your shop within 7 business days.
 
@@ -1266,19 +1146,19 @@ This guide describes how to integrate Sezzle into your Shopify website so that y
 2. Click `Instructions`.<br/>
 3. Click the first hyperlink on the new page to enable the gateway for your shop. If prompted, select your Shopify store.<br/>
 4. Click `Install Payment Provider`. <br/>
-![install_payment_provider](images/integrations/shopify/install-payment-provider.png)<br/>
+![install_payment_provider](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/install-payment-provider.png?raw=true)<br/>
 
 ### Admin Configuration
 
 1. In your Shopify admin, go to `Settings` > `Payment Providers`. <br/>
-![sezzle_payment_config](images/integrations/shopify/payment-providers.png)<br/>
+![sezzle_payment_config](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/payment-providers.png?raw=true)<br/>
 2. Under `Alternative Payment Methods`, click `Choose Alternative Payment`. <br/>
-![choose_alternative_payment](images/integrations/shopify/choose-alternative-payment.png)<br/>
+![choose_alternative_payment](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/choose-alternative-payment.png?raw=true)<br/>
 3. Search for and click on `Sezzle`. <br/>
-![select_sezzle](images/integrations/shopify/select-sezzle.png)<br/>
+![select_sezzle](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/select-sezzle.png?raw=true)<br/>
 4. Copy your `Public Key` and `Private Key` from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a>, and paste them into the corresponding fields in the Sezzle configuration page of your Shopify admin.<br/>
 5. Click the `Activate Sezzle` button. <br/>
-![account_information](images/integrations/shopify/account-information.png)<br/>
+![account_information](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/account-information.png?raw=true)<br/>
 6. Installation is complete.<br/>
 
 ### Shopify Live Checkout
@@ -1286,7 +1166,7 @@ This guide describes how to integrate Sezzle into your Shopify website so that y
 1. In the Sezzle configuration page of your Shopify admin, enter the API Keys from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a> and uncheck the `Enable Test Mode` checkbox, then save the configuration. 
 2. On your website, add an item to your cart, then proceed to `Checkout` and select `Sezzle` as the payment method.
 3. Click `Place Order`.
-![checkout](images/integrations/shopify/checkout.png)
+![checkout](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/shopify/checkout.png?raw=true)
 4. If you are redirected to the Sezzle checkout page, your integration is complete. **Congratulations!**
 5. **Warning** Don't complete the payment. Your checkout is now live, so you will be charged if you complete.
 
@@ -1383,21 +1263,21 @@ This guide describes how to integrate Sezzle into your WooCommerce website so th
 
 1. Log in to your website's Wordpress admin.
     * Ex: your-website.com/wp-admin
-![wordpress login](images/integrations/woocommerce/admin-login.png)
+![wordpress login](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/woocommerce/admin-login.png?raw=true)
 2. In the left sidebar, click `Plugins` > `Add New`.
 3. Search for `Sezzle`.
 4. Click `Install Now`. 
-![search sezzle](images/integrations/woocommerce/search-sezzle.png)
+![search sezzle](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/woocommerce/search-sezzle.png?raw=true)
 5. Click `Activate`.
-![activate sezzle](images/integrations/woocommerce/activate-sezzle.png)
+![activate sezzle](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/woocommerce/activate-sezzle.png?raw=true)
 
 ### Admin Configuration
 
 1. In the left sidebar, click `WooCommerce` > `Settings` .
 2. Select the `Payments` tab.
-![payment settings](images/integrations/woocommerce/go-to-payment-settings.png)
+![payment settings](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/woocommerce/go-to-payment-settings.png?raw=true)
 3. Click the `Manage` button for `Sezzle`.
-![select sezzle](images/integrations/woocommerce/select-sezzle.png)
+![select sezzle](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/woocommerce/select-sezzle.png?raw=true)
 4. Check the `Enable/Disable` checkbox for enabling Sezzle.
 5. Check the `Payment option availability in other countries` if you want to allow Sezzle outside of `US` and `Canada`.
     - Note, Sezzle operates only in `US` and `Canada`. Be sure to check this option.
@@ -1411,7 +1291,7 @@ This guide describes how to integrate Sezzle into your WooCommerce website so th
     2. Set the `Order Total Container Class Name`. Default is `woocommerce-Price-amount`.
     3. Set the `Order Total Container Parent Class Name`. Default is `order-total`.
 12. Check the `Enable Logging` checkbox for logging Sezzle checkout related data. This is helpful for debugging issues, if encountered.
-![sezzle page overview](images/integrations/woocommerce/sezzle-page-overview.png)
+![sezzle page overview](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/woocommerce/sezzle-page-overview.png?raw=true)
 13. Click `Save Changes`.
 
 ### WooCommerce Sandbox Testing
@@ -1419,7 +1299,7 @@ This guide describes how to integrate Sezzle into your WooCommerce website so th
 1. In the `Sezzle` configuration page of your WooCommerce admin, enter the [Sandbox API Keys](#sandbox) from your <a class="external-link" target="_blank" href="https://sandbox.dashboard.sezzle.com/merchant">Sezzle Merchant Sandbox Dashboard</a> and set the `Transaction Mode` to `Sandbox`, then save the configuration. Make sure you are doing this on your `dev`/`staging` website.
 2. On your website, add an item to the cart, then proceed to `Checkout` and select `Sezzle` as the payment method.
 3. Click `Place Order`, and you should be redirected to the Sezzle checkout page. If prompted, sign in.
-![select sezzle payment](images/integrations/woocommerce/select-sezzle-payment.png)
+![select sezzle payment](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/woocommerce/select-sezzle-payment.png?raw=true)
 4. Enter the payment details using [test data](#test-data), then click `Complete Order`.
 5. After the payment is completed on Sezzle, you should be redirected back to your website and see a successful payment page.
 6. **Sandbox testing is complete**. You can log in to your <a class="external-link" target="_blank" href="https://sandbox.dashboard.sezzle.com/merchant">Sezzle Merchant Sandbox Dashboard</a> to see the test order you just placed.
@@ -1429,7 +1309,7 @@ This guide describes how to integrate Sezzle into your WooCommerce website so th
 1. In the `Sezzle` configuration page of your WooCommerce admin, enter the API Keys from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a> and set the `Transaction Mode` to `Live`, then save the configuration. 
 2. On your website, add an item to the cart, then proceed to `Checkout` and select `Sezzle` as the payment method.
 3. Click `Place Order`.
-![select sezzle payment](images/integrations/woocommerce/select-sezzle-payment.png)
+![select sezzle payment](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/woocommerce/select-sezzle-payment.png?raw=true)
 4. If you are redirected to the Sezzle checkout page, your integration is complete. **Congratulations!**
 5. **Warning** Don't complete the payment. Your checkout is now live, so you will be charged if you complete.
 
@@ -1495,7 +1375,7 @@ Go to <a class="external-link" target="_blank" href="https://www.zoey.com/apps/s
 
 1. Go to `Set-up` > `Payment Methods` > `Sezzle`.
 2. Click `Configure`.
-![admin zoey](images/integrations/zoey/zoey-payment.png)
+![admin zoey](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/zoey/zoey-payment.png?raw=true)
 3.  Configure the extension as follows:
     1. Set `Enabled` to `Yes`.
     2. Copy your `Merchant ID` from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/business">Sezzle Merchant Dashboard</a>, and paste it into the corresponding field in the Sezzle configuration page of your Zoey admin.
@@ -1505,7 +1385,7 @@ Go to <a class="external-link" target="_blank" href="https://www.zoey.com/apps/s
     6. Set `Payment from Applicable Countries` to `Specific Countries`.
     7. Set `Payment from Specific Countries` to `United States` or `Canada` as applicable.
     8. Save the configuration.
-    ![admin zoey sezzlepay](images/integrations/zoey/zoey-pay-fields.png)
+    ![admin zoey sezzlepay](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/zoey/zoey-pay-fields.png?raw=true)
 4. Click `Advanced/Refresh Your Store`.
 5. Installation is complete.
 
@@ -1514,7 +1394,7 @@ Go to <a class="external-link" target="_blank" href="https://www.zoey.com/apps/s
 1. In the Sezzle configuration page of your Zoey admin, enter the [Sandbox API Keys](#sandbox) from your <a class="external-link" target="_blank" href="https://sandbox.dashboard.sezzle.com/merchant">Sezzle Merchant Sandbox Dashboard</a> and set the `API Mode` to `Sandbox/Test`, then save the configuration. Make sure you are doing this on your `dev`/`staging` website.
 2. On your website, add an item to the cart, then proceed to `Checkout` and select `Sezzle` as the payment method.
 3. Click `Continue` then `Place Order` and you should be redirected to the Sezzle checkout page. If prompted, sign in.
-![onepage zoey payment movement](images/integrations/zoey/zoey-sezzle-payment-page.png)
+![onepage zoey payment movement](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/zoey/zoey-sezzle-payment-page.png?raw=true)
 4. Enter the payment details using [test data](#test-data), then click `Complete Order`.
 5. After the payment is completed on Sezzle, you should be redirected back to your website and see a successful payment page.
 6. **Sandbox testing is complete**. You can log in to your <a class="external-link" target="_blank" href="https://sandbox.dashboard.sezzle.com/merchant">Sezzle Merchant Sandbox Dashboard</a> to see the test order you just placed.
@@ -1524,7 +1404,9 @@ Go to <a class="external-link" target="_blank" href="https://www.zoey.com/apps/s
 1. In the Sezzle configuration page of your Zoey admin, enter the API Keys from your <a class="external-link" target="_blank" href="https://dashboard.sezzle.com/merchant/settings/apikeys">Sezzle Merchant Dashboard</a> and set the `API Mode` to `Live`, then save the configuration.
 2. On your website, add an item to your cart, then proceed to `Checkout` and select `Sezzle` as the payment method.
 3. Click `Continue` then `Place Order`.
-![onepage zoey payment movement](images/integrations/zoey/zoey-sezzle-payment-page.png)
+![onepage zoey payment movement](https://github.com/jeffreySezzle/test-category/blob/main/Merchant-Guide-v2/images/integrations/zoey/zoey-sezzle-payment-page.png?raw=true)
 4. If you are redirected to the Sezzle checkout page, your integration is complete. **Congratulations!**
 ![sezzle checkout](images/sezzle-checkout.png)
 5. **Warning** Don't complete the payment. Your checkout is now live, so you will be charged if you complete.
+
+<div class="end-of-page"></div>
