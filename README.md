@@ -1,3 +1,3 @@
 # sezzle-merchant-docs
 
-The new official GitHub repo for ReadMe.io docs
+DEPRECATED, SEE: https://sezzle.atlassian.net/wiki/spaces/PI/pages/2124316872/Technical+Documentation
